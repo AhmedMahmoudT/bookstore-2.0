@@ -34,7 +34,7 @@ export default function Home() {
   }, [books, loading]);
 
   return (
-    <main className="flex flex-col h-screen">
+    <main className="flex flex-col h-screen overflow-hidden">
       <div className="m-auto">
         {!loading && !loadingAfter ? (
           <div className="mt-20 grid grid-cols-3 gap-y-24 w-auto h-[750px] overflow-scroll no-scrollbar">

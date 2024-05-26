@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Provider store={store}>
-        <body className={outfit.className}>
+        <body className={`${outfit.className} overflow-hidden`}>
           <CartnNavBar />
           {children}
         </body>
