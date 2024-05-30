@@ -15,6 +15,7 @@ const BookDetails = ({ params }) => {
   const dispatch = useDispatch()
 
   const [book, setBook] = useState({title:'',coverImage:'',price:0});
+  const [title, setTitle] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -44,6 +45,7 @@ const BookDetails = ({ params }) => {
       try {
         setBook(bookFind);
         setLoading(false);
+        setTitle('Bookstore: '+book.title)
       } catch (error) {
         setError(true)
       }
@@ -55,6 +57,7 @@ const BookDetails = ({ params }) => {
       <div className="m-auto">
         {!loading ? (
           <div className="flex gap-10 justify-center items-center">
+            <title>{title}</title>
             <Image
               src={book.coverImage}
               alt={book.title}
@@ -72,11 +75,11 @@ const BookDetails = ({ params }) => {
               </p>
               <button className="rounded-full border-2 border-blue-500 text-xl w-fit px-5 text-center text-blue-500 font-semibold hover:text-white hover:bg-blue-500 transition-all my-5">{book.category}</button>
               <div className="flex gap-10 justify-start items-center mb-5">
-              <div className="h-fit w-10 flex flex-col items-center justify-center border-2 rounded-full border-orange-500">
-                <button onClick={incrementQnt} className="w-10 flex justify-center items-center text-orange-500 rounded-t-full hover:bg-orange-500 hover:text-white transition-all text-3xl border-b-2 border-orange-500">
+              <div className="h-fit w-10 flex flex-col items-center justify-center border-2 rounded-full border-intorange-600">
+                <button onClick={incrementQnt} className="w-10 flex justify-center items-center text-intorange-600 rounded-t-full hover:bg-intorange-600 hover:text-white transition-all text-3xl border-b-2 border-intorange-600">
                 <IoMdArrowDropup />
                 </button>
-                <button onClick={decrementQnt} className="w-10 flex justify-center items-center text-orange-500 rounded-b-full hover:bg-orange-500 hover:text-white transition-all text-3xl">
+                <button onClick={decrementQnt} className="w-10 flex justify-center items-center text-intorange-600 rounded-b-full hover:bg-intorange-600 hover:text-white transition-all text-3xl">
                 <IoMdArrowDropdown />
                 </button>
               </div>
@@ -85,12 +88,12 @@ const BookDetails = ({ params }) => {
               <p className="text-xl font-semibold">Available Copies: {book.availableCopies}</p>
               <div className="flex gap-5 mx-auto mt-14 items-center w-fit">
                 <p className="text-2xl font-bold text-justify"><sup>$</sup>{book.price}</p>
-                <button className="px-4 py-2 text-orange-500 border-2 border-orange-500 hover:bg-orange-500 hover:text-white rounded transition-all text-xl flex gap-3 items-center w-fit" onClick={addToCart}><MdOutlineAddShoppingCart /> Add to Cart</button> or
-                <button className="px-4 py-2 text-blue-500 border-2 border-blue-500 hover:bg-blue-500 hover:text-white rounded transition-all text-xl flex gap-3 items-center"><PiListHeartBold /> Wishlist</button>
+                <button className="px-4 py-2 text-intorange-600 border-2 border-intorange-600 hover:bg-intorange-600 hover:text-white rounded transition-all text-xl flex gap-3 items-center w-fit" onClick={addToCart}><MdOutlineAddShoppingCart /> Add to Cart</button> or
+                <button className="px-4 py-2 bg-intorange-700 text-white hover:text-intorange-700 border-2 border-[#E84E08] hover:bg-white rounded transition-all text-xl flex gap-3 items-center"><PiListHeartBold /> Wishlist</button>
               </div>
             </div>
           </div>
-        ) : (error?(<h1 className="text-6xl text-orange-500 font-bold">Book not Found <span className="ms-10 text-7xl">:(</span></h1>):(
+        ) : (error?(<h1 className="text-6xl text-intorange-600 font-bold">Book not Found <span className="ms-10 text-7xl">:(</span></h1>):(
           <Loading />
         ))}
       </div>

@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col h-screen">
+      <title>Bookstore Admin Mode</title>
       <div className="m-auto">
         {!loading ? (
           <>

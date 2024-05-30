@@ -68,7 +68,7 @@ const Info = ({ params }) => {
               </div>
             </div>
           </div>
-        ) : (error?(<h1 className="text-6xl text-orange-500 font-bold">Book not Found <span className="ms-10 text-7xl">:(</span></h1>):(
+        ) : (error?(<h1 className="text-6xl text-intorange-600 font-bold">Book not Found <span className="ms-10 text-7xl">:(</span></h1>):(
           <Loading />
         ))}
       </div>
