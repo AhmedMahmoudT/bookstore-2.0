@@ -15,7 +15,7 @@ const BookDetails = ({ params }) => {
   const dispatch = useDispatch()
 
   const [book, setBook] = useState({title:'',coverImage:'',price:0});
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState('Bookstore');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -56,8 +56,9 @@ const BookDetails = ({ params }) => {
     <main className="flex flex-col h-screen">
       <div className="m-auto">
         {!loading ? (
+          <>
+          <title>{title}</title>
           <div className="flex gap-10 justify-center items-center">
-            <title>{title}</title>
             <Image
               src={book.coverImage}
               alt={book.title}
@@ -89,10 +90,11 @@ const BookDetails = ({ params }) => {
               <div className="flex gap-5 mx-auto mt-14 items-center w-fit">
                 <p className="text-2xl font-bold text-justify"><sup>$</sup>{book.price}</p>
                 <button className="px-4 py-2 text-intorange-600 border-2 border-intorange-600 hover:bg-intorange-600 hover:text-white rounded transition-all text-xl flex gap-3 items-center w-fit" onClick={addToCart}><MdOutlineAddShoppingCart /> Add to Cart</button> or
-                <button className="px-4 py-2 bg-intorange-700 text-white hover:text-intorange-700 border-2 border-[#E84E08] hover:bg-white rounded transition-all text-xl flex gap-3 items-center"><PiListHeartBold /> Wishlist</button>
+                <button className="px-4 py-2 bg-intorange-400 text-white hover:text-intorange-400 border-2 border-intorange-400 hover:bg-white rounded transition-all text-xl flex gap-3 items-center"><PiListHeartBold /> Wishlist</button>
               </div>
             </div>
           </div>
+          </>
         ) : (error?(<h1 className="text-6xl text-intorange-600 font-bold">Book not Found <span className="ms-10 text-7xl">:(</span></h1>):(
           <Loading />
         ))}

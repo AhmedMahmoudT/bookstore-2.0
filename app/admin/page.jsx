@@ -75,17 +75,29 @@ export default function Home() {
                         </td>
                         <td className="w-[75px] h-[125px] border-t border-black text-[30px]">
                           <div className="flex items-center justify-center ">
-                          <Link className="hover:text-blue-500 transition-all" href={`admin/info/${book.id}`}><FaRegQuestionCircle /></Link>
+                            <Link
+                              className="hover:text-intorange-400 transition-all"
+                              href={`admin/info/${book.id}`}
+                            >
+                              <FaRegQuestionCircle />
+                            </Link>
                           </div>
                         </td>
                         <td className="w-[75px] h-[125px] border-t border-black text-[30px]">
                           <div className="flex items-center justify-center">
-                          <Link className="hover:text-orange-500 transition-all" href={`admin/edit/${book.id}`}><FaRegEdit /></Link>
+                            <Link
+                              className="hover:text-intorange-600 transition-all"
+                              href={`admin/edit/${book.id}`}
+                            >
+                              <FaRegEdit />
+                            </Link>
                           </div>
                         </td>
                         <td className="w-[75px] h-[125px] border-t border-black text-[30px]">
                           <div className="flex items-center justify-center">
-                            <button className="hover:text-red-500 transition-all"><FaBackspace /></button>
+                            <button className="hover:text-intorange-700 transition-all">
+                              <FaBackspace />
+                            </button>
                           </div>
                         </td>
                       </tr>
