@@ -21,7 +21,6 @@ module.exports = {
           900: '#822b0c',
           950: '#461204',
         },
-        // ...
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
