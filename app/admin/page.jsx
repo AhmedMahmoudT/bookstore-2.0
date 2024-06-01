@@ -76,7 +76,7 @@ export default function Home() {
                         <td className="w-[75px] h-[125px] border-t border-black text-[30px]">
                           <div className="flex items-center justify-center ">
                             <Link
-                              className="hover:text-intorange-400 transition-all"
+                              className="hover:text-intorange-600 transition-all"
                               href={`admin/info/${book.id}`}
                             >
                               <FaRegQuestionCircle />
@@ -95,7 +95,7 @@ export default function Home() {
                         </td>
                         <td className="w-[75px] h-[125px] border-t border-black text-[30px]">
                           <div className="flex items-center justify-center">
-                            <button className="hover:text-intorange-700 transition-all">
+                            <button className="hover:text-intorange-600 transition-all">
                               <FaBackspace />
                             </button>
                           </div>

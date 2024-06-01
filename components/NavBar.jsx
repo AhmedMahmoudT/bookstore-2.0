@@ -10,7 +10,7 @@ const NavBar = ({setHidden}) => {
               <div className="w-[50%] h-[60%] bg-white rounded-full"></div>
             </div>
             <div className="w-[15px] h-[15px] rounded bg-intorange-600 group-hover:bg-intorange-500 transition-all flex items-center justify-center">
-            <div className="w-[50%] mt-[2px] h-[50%] bg-white rounded-full"></div>
+            <div className="w-[50%] mt-[2px] me-[1px] h-[40%] bg-white rounded-full"></div>
 
             </div>
       </div>

@@ -35,12 +35,12 @@ export default function HomeClient() {
     <main className="flex flex-col h-screen overflow-hidden">
       <div className="m-auto">
         {!loading && !loadingAfter ? (
-          <div className="mt-20 grid grid-cols-3 gap-y-24 w-auto h-[750px] overflow-scroll no-scrollbar">
+          <div className="mt-20 grid grid-cols-3 px-[10%] 2xl:gap-y-24 xl:gap-y-20 gap-y-14 w-screen 2xl:h-[700px] xl:h-[500px] h-[400px] overflow-scroll no-scrollbar">
             {books.map((book,key)=>{
               return (
-                <Link href={`/bookDetails/${book.id}`} onClick={()=>handleRouting(book.id)} key={key} className="flex flex-col items-center justify-center relative mx-20 hover:scale-110 transition-all cursor-pointer">
-                  <Image src={book.coverImage} alt={book.title} width={2000} height={2000} style={{width: '250px', height: '400px'}}/>
-                  <div className="text-xl w-[250px] absolute -bottom-12 h-10 flex justify-between">
+                <Link href={`/bookDetails/${book.id}`} onClick={()=>handleRouting(book.id)} key={key} className="flex flex-col items-center justify-center relative hover:scale-110 transition-all cursor-pointer">
+                  <Image src={book.coverImage} alt={book.title} width={2000} height={2000} className="2xl:w-[250px] 2xl:h-[400px] xl:w-[200px] xl:h-[320px] lg:w-[150px] lg:h-[240px] w-[100px] h-[160px]"/>
+                  <div className="text-[8px] lg:text-[10px] xl:text-base 2xl:text-xl 2xl:w-[250px] xl:w-[200px] lg:w-[150px] w-[100px] absolute -bottom-12 h-10 flex justify-between">
                     <h1 className="my-auto w-3/4">{book.title}</h1>
                     <h1 className="my-auto"><sup>$</sup>{book.price}</h1>
                   </div>
