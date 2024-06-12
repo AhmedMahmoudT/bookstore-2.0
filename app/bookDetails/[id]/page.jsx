@@ -8,13 +8,13 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import { PiListHeartBold } from "react-icons/pi";
 import { addBook } from "@/features/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const BookDetails = ({ params }) => {
   const id = params.id;
   const dispatch = useDispatch()
 
-  const [book, setBook] = useState({title:'',coverImage:'',price:0});
+  const [book, setBook] = useState({});
   const [title, setTitle] = useState('Bookstore');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -42,12 +42,14 @@ const BookDetails = ({ params }) => {
         booksArr.push({ ...doc.data(), id: doc.id });
       });
       const bookFind = booksArr.filter((book) => book.id == id)[0];
-      try {
+
+      if (bookFind) {
         setBook(bookFind);
         setLoading(false);
         setTitle('Bookstore: '+book.title)
-      } catch (error) {
-        setError(true)
+      } else {
+        setError(true);
+        return;
       }
     });
   }, [book, id]);
